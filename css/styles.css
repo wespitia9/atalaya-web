@@ -1,0 +1,14 @@
+/* ... tus estilos anteriores ... */
+
+/* CORRECCIÓN QA: Mejora de Contraste */
+/* Bootstrap por defecto usa un gris muy claro para 'text-muted'. 
+   Lo oscurecemos para pasar el test AA de Lighthouse */
+.text-secondary, .text-muted {
+    color: #4a4a4a !important; /* Gris más oscuro = Más legible */
+}
+
+/* Modo oscuro: Aseguramos que el texto gris sea legible sobre fondo negro */
+[data-bs-theme="dark"] .text-secondary, 
+[data-bs-theme="dark"] .text-muted {
+    color: #b0b0b0 !important; /* Gris claro sobre fondo oscuro */
+}

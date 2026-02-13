@@ -1,47 +1,34 @@
-// Módulo UI: Se encarga de pintar en pantalla y validar formularios
-
-// Función para pintar tarjetas de testimonios
 export function renderizarTestimonios(usuarios, contenedor) {
-    const muestra = usuarios.slice(0, 3);
+    contenedor.innerHTML = ''; 
 
-    muestra.forEach(usuario => {
-        // Creamos un DIV columna para la grilla
-        const columna = document.createElement('div');
-        columna.className = 'col-md-4 mb-3'; // Clases de Bootstrap
+    usuarios.forEach(usuario => {
+        const col = document.createElement('div');
+        col.className = 'col-md-4 mb-4';
 
-        columna.innerHTML = `
-            <div class="card h-100 p-3 shadow-sm">
-                <h5 class="card-title">${usuario.name}</h5>
-                <p class="card-text text-muted">Empresa: <strong>${usuario.company.name}</strong></p>
-                <small>${usuario.email}</small>
+        // CORRECCIÓN QA EN JS:
+        // 1. Usamos <h3> para el nombre (Jerarquía correcta dentro de la sección H2).
+        // 2. Agregamos alt="" a la imagen (aunque sea decorativa).
+        // 3. Usamos text-secondary en lugar de text-muted para mejor contraste.
+        
+        col.innerHTML = `
+            <div class="card h-100 shadow-sm">
+                <div class="card-body text-center">
+                    <img src="https://i.pravatar.cc/150?u=${usuario.id}" 
+                         alt="Foto de perfil de ${usuario.name}" 
+                         class="rounded-circle mb-3" width="80">
+                    
+                    <h3 class="h5 card-title fw-bold">${usuario.name}</h3>
+                    <p class="small text-secondary mb-2">@${usuario.username}</p>
+                    
+                    <p class="card-text fst-italic">"${usuario.company.catchPhrase}"</p>
+                </div>
             </div>
         `;
-        contenedor.appendChild(columna);
+        contenedor.appendChild(col);
     });
 }
 
-// Función para Validar Formulario
-export function validarFormulario(evento) {
-    evento.preventDefault(); // Detenemos recarga
-
-    // Selección de inputs dentro del formulario que disparó el evento
-    const formulario = evento.target;
-    const nombre = formulario.querySelector('#nombre').value;
-    const email = formulario.querySelector('#email').value;
-
-    // Validación: Campos vacíos
-    if (!nombre || !email) {
-        alert('❌ Error: Por favor completa todos los campos.');
-        return;
-    }
-
-    // Validación extra: Formato de correo simple (incluye @)
-    if (!email.includes('@')) {
-        alert('⚠️ Error: Ingresa un correo válido.');
-        return;
-    }
-
-    // Éxito
-    alert(`✅ ¡Gracias ${nombre}! Mensaje enviado correctamente.`);
-    formulario.reset();
+export function validarFormulario(e) {
+    e.preventDefault();
+    alert('Formulario enviado correctamente (Simulación)');
 }
