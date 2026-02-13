@@ -1,0 +1,160 @@
+<!-- Declaración del tipo de documento -->
+<!DOCTYPE html>
+<html lang="es"> <!-- Idioma principal del sitio -->
+
+<head>
+    <!-- Codificación de caracteres -->
+    <meta charset="UTF-8">
+
+    <!-- Configuración para que sea responsivo en móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Descripción para SEO -->
+    <meta name="description" content="Atalaya Studio - Soluciones digitales creativas.">
+
+    <!-- Título de la pestaña del navegador -->
+    <title>Atalaya Studio | Inicio</title>
+
+    <!-- Bootstrap CSS desde CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Hoja de estilos personalizada -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- Encabezado con barra de navegación -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">Atalaya Studio</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto align-items-center">
+
+                        <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+
+                        <li class="nav-item ms-3">
+                            <button id="btn-tema" class="btn btn-outline-light btn-sm">
+                                🌗 Tema
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contenido principal -->
+    <main>
+
+        <!-- Sección de bienvenida -->
+        <section id="inicio" class="bg-light text-center py-5">
+            <div class="container">
+                <!-- Título destacado -->
+                <h2 class="display-4">Transformamos ideas en experiencias digitales</h2>
+                <!-- Texto introductorio -->
+                <p class="lead">Agencia creativa especializada en diseño web, branding y estrategia.</p>
+                <!-- Botón de acción -->
+                <button class="btn btn-primary btn-lg">Ver Proyectos</button>
+            </div>
+        </section>
+
+        <!-- Sección de servicios -->
+        <section id="servicios" class="container my-5">
+            <h2 class="text-center mb-4">Nuestros Servicios</h2>
+
+            <!-- Fila con 3 columnas -->
+            <div class="row text-center">
+
+                <!-- Servicio 1 -->
+                <article class="col-md-4 mb-3">
+                    <div class="card h-100 p-3 shadow-sm">
+                        <h3>Diseño Web</h3>
+                        <p>Sitios modernos y responsivos.</p>
+                    </div>
+                </article>
+
+                <!-- Servicio 2 -->
+                <article class="col-md-4 mb-3">
+                    <div class="card h-100 p-3 shadow-sm">
+                        <h3>Desarrollo a Medida</h3>
+                        <p>Aplicaciones web robustas.</p>
+                    </div>
+                </article>
+
+                <!-- Servicio 3 -->
+                <article class="col-md-4 mb-3">
+                    <div class="card h-100 p-3 shadow-sm">
+                        <h3>Consultoría SEO</h3>
+                        <p>Optimización para buscadores.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Sección de testimonios -->
+        <section id="testimonios" class="bg-light py-5">
+            <div class="container">
+                <h2 class="text-center mb-4">Lo que dicen nuestros clientes</h2>
+                <!-- Contenedor dinámico para testimonios -->
+                <div id="contenedor-testimonios" class="row"></div>
+            </div>
+        </section>
+
+        <!-- Sección de contacto -->
+        <section id="contacto" class="container my-5">
+            <h2 class="text-center mb-4">Contáctanos</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <!-- Formulario dentro de una tarjeta -->
+                    <form action="#" method="POST" class="card p-4 shadow">
+
+                        <!-- Campo nombre -->
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre:</label>
+                            <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Tu nombre"
+                                required>
+                        </div>
+
+                        <!-- Campo correo -->
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Correo:</label>
+                            <input type="email" id="email" name="email" class="form-control"
+                                placeholder="tucorreo@ejemplo.com" required>
+                        </div>
+
+                        <!-- Campo mensaje -->
+                        <div class="mb-3">
+                            <label for="mensaje" class="form-label">Mensaje:</label>
+                            <textarea id="mensaje" name="mensaje" class="form-control" rows="4"></textarea>
+                        </div>
+
+                        <!-- Botón de envío -->
+                        <button type="submit" class="btn btn-primary w-100">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Atalaya Studio. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Bootstrap JS desde CDN (incluye Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script principal del proyecto -->
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>
